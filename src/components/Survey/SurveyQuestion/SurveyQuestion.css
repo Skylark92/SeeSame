@@ -1,0 +1,11 @@
+.survey-question-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  background: radial-gradient(#387237, black);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.survey-image {
+  width: 50%;
+}

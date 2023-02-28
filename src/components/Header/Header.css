@@ -1,0 +1,8 @@
+.viewport-wrapper > header {
+  width: 100%;
+  height: var(--topbar-height);
+  position: fixed;
+  top: 0;
+
+  text-align: center;
+}
