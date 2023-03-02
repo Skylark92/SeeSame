@@ -10,4 +10,6 @@ body, button {
 
 :root {
   --topbar-height: 38px;
+  --color-chosen: green;
+  --color-rested: red;
 }

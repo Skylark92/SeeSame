@@ -1,0 +1,18 @@
+.ratio-bar-wrapper {
+  width: 100%;
+  outline: 1px inset black;
+  display: flex;
+}
+
+.ratio-bar-chosen {
+  background-color: var(--color-chosen);
+}
+
+.ratio-bar-rested {
+  background-color: var(--color-rested);
+}
+
+.ratio-bar-chosen, .ratio-bar-rested {
+  color: white;
+  text-align: center;
+}
