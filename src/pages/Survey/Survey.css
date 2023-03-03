@@ -1,7 +1,7 @@
-.survey-question-wrapper {
+.survey-wrapper {
   width: 100%;
   border-radius: 10px;
-  background: radial-gradient(#387237, black);
+  background: radial-gradient(circle at 10%, #00bafb, #006dbe);
   margin: 0 auto;
   text-align: center;
 }
