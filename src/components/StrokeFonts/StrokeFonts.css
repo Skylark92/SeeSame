@@ -1,0 +1,33 @@
+.stroke-fonts {
+  font-size: inherit;
+  font-weight:bold;
+  
+  position:relative;
+}
+
+/* 윤곽선이 되는 배경 */
+.stroke-fonts::before {
+  content: attr(data-text);
+  display: inline-block;
+  width: 100%;
+  line-height: 1.6em;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:transparent;
+
+  -webkit-text-stroke: 5px transparent;    
+}
+
+/* 폰트를 차지하는 배경 */
+.stroke-fonts::after {
+  content: attr(data-text);
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
