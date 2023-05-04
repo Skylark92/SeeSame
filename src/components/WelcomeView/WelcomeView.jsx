@@ -1,9 +1,23 @@
 import "./WelcomeView.css";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/sesame_logo.png";
 import GradientFonts from "../GradientFonts/GradientFonts";
 import Button from "../Button/Button";
 
 function WelcomeView() {
+  const auth = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+
+  const movePageHandler = (event) => {
+    if (auth.isLogin) {
+      navigate("/survey");
+    }
+    else if (!auth.isLogin) {
+      navigate("/tutorial");
+    }
+  }
+
   return (
     <div className="welcome-view-wrapper">
       <h1 className="welcome-view-title"><GradientFonts text="See Same" /></h1>
@@ -13,7 +27,8 @@ function WelcomeView() {
         background="var(--color-button-a)"
         padding="1rem 3rem"
         margin="1.6rem 0"
-        text="시작하기" />
+        text="시작하기"
+        onClick={movePageHandler} />
     </div>
   )
 }
