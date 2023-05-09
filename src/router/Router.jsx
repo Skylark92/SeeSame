@@ -3,6 +3,8 @@ import WelcomeView from "../components/WelcomeView/WelcomeView";
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import EditProfilePage from "../pages/EditProfilePage/EditProfilePage";
 import TutorialPage from '../pages/TutorialPage/TutorialPage';
+import SurveyPage from "../pages/SurveyPage/SurveyPage";
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 function Router() {
   return (
@@ -11,8 +13,9 @@ function Router() {
         <Route path="/" element={<WelcomeView />} />
         <Route path="/tutorial" element={<TutorialPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/survey" element={"survey"} />
+        <Route path="/survey/:id" element={<SurveyPage />} />
         <Route path="/editprofile" element={<EditProfilePage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   )
