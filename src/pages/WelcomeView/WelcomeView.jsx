@@ -2,8 +2,8 @@ import "./WelcomeView.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/sesame_logo.png";
-import GradientFonts from "../GradientFonts/GradientFonts";
-import Button from "../Button/Button";
+import GradientFonts from "../../components/GradientFonts/GradientFonts";
+import Button from "../../components/Button/Button";
 
 function WelcomeView() {
   const auth = useSelector((state) => state.auth);
@@ -11,7 +11,8 @@ function WelcomeView() {
 
   const movePageHandler = (event) => {
     if (auth.isLogin) {
-      navigate("/survey");
+      if (!auth.user) navigate("/editprofile");
+      else navigate("/survey");
     }
     else if (!auth.isLogin) {
       navigate("/tutorial");
