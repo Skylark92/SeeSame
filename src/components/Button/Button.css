@@ -10,7 +10,7 @@
 }
 
 .common-button:disabled {
-  opacity: 0.5;
+  background-color: var(--color-null);
   
   cursor: default;
 }
