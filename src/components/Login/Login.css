@@ -1,0 +1,9 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.login-wrapper > form > button {
+  line-height: 38px;
+}
