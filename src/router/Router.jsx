@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import WelcomeView from "../components/WelcomeView/WelcomeView";
+import WelcomeView from "../pages/WelcomeView/WelcomeView";
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import EditProfilePage from "../pages/EditProfilePage/EditProfilePage";
 import TutorialPage from '../pages/TutorialPage/TutorialPage';
@@ -13,6 +13,7 @@ function Router() {
         <Route path="/" element={<WelcomeView />} />
         <Route path="/tutorial" element={<TutorialPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/survey" element={<SurveyPage />} />
         <Route path="/survey/:id" element={<SurveyPage />} />
         <Route path="/editprofile" element={<EditProfilePage />} />
         <Route path="/*" element={<ErrorPage />} />
