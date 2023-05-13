@@ -1,0 +1,19 @@
+.edit-profile-wrapper {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 5rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  border: 1px solid black;
+}
+
+.edit-profile-image-view {
+  width: 214px;
+  height: 204px;
+  background: url("../../assets/images/css_sprites.png");
+}

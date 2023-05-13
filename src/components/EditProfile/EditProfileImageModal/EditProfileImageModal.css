@@ -1,0 +1,33 @@
+input[type="radio"] {
+  all: unset;
+}
+
+.edit-profile-image-modal-wrapper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-profile-image-selector {
+  background-color: #fff;
+
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-profile-image-selector-label {
+  display: inline-block;
+  background-image: url("../../../assets/images/css_sprites.png");
+  width: 214px;
+  height: 204px;
+}

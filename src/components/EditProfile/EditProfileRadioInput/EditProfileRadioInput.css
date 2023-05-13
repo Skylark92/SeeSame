@@ -1,0 +1,19 @@
+input[type="radio"] {
+  all: unset;
+}
+
+.edit-profile-radio-input-label {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  
+  background: gray;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+
+input:checked + .edit-profile-radio-input-label {
+  background: hotpink;
+}
