@@ -15,6 +15,9 @@ function App() {
       getUserData(token)
         .then((res) => {
           dispatch(LOGIN(res));
+        })
+        .catch((err) => {
+          console.log(err);
         });
     }
   }, [])

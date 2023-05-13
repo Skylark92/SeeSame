@@ -27,6 +27,7 @@
   color: white;
 
   --color-background: #268fdf;
+  --color-null: #b6b6b6;
   --color-button-a: linear-gradient(#bdff00, #38d600);
   --color-button-b: linear-gradient(#ff8181, #cb2e2e);
   --color-button-c: linear-gradient(#00f0ff, #0091fa);
@@ -35,6 +36,16 @@
   --color-font-stroke: #134870;
   --color-choice-a: linear-gradient(180deg, #80ff00 0%, #3bb700 100%);
   --color-choice-b: linear-gradient(180deg, #ff4848 0%, #a01d1d 100%);
+  
+  --profile-image-01: -10px -10px;
+  --profile-image-02: -244px -10px;
+  --profile-image-03: -478px -10px;
+  --profile-image-04: -10px -234px;
+  --profile-image-05: -244px -234px;
+  --profile-image-06: -478px -234px;
+  --profile-image-07: -10px -458px;
+  --profile-image-08: -244px -458px;
+  --profile-image-09: -478px -458px;
 }
 
 /* 초기화 */
