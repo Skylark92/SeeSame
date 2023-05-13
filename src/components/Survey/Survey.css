@@ -1,0 +1,29 @@
+.survey-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: 100%;
+}
+
+.survey-image {
+  width: 276px;
+  margin: 1.5rem 0 0.6rem 0;
+}
+
+.survey-content {
+  max-width: 342px;
+  height: 186px;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.survey-wrapper > button {
+  margin-top: 1.6rem;
+}
