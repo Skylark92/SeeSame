@@ -1,0 +1,29 @@
+.stats-bar-wrapper {
+  width: 100%;
+
+  display: flex;
+  text-align: initial;
+}
+
+.stats-bar-choice-a, .stats-bar-choice-b {
+  width: 100%;
+
+  text-indent: 5px;
+}
+
+.stats-bar-choice-a {  
+  flex: var(--choice-a-ratio) 1 15%;
+  background: var(--color-choice-a);
+}
+
+.stats-bar-choice-b {
+  flex: var(--choice-b-ratio) 1 15%;
+  background: var(--color-choice-b);
+  direction: rtl;
+}
+
+.stats-bar-null {
+  width: 100%;
+  text-align: center;
+  background: var(--color-null);
+}

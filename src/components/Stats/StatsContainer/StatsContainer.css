@@ -1,0 +1,6 @@
+.stats-container {
+  width: 30rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 8px 11px 8px;
+  border-radius: 10px;
+}
