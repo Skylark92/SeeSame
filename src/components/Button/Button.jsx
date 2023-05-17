@@ -1,5 +1,4 @@
 import "./Button.css";
-import StrokeFonts from "../StrokeFonts/StrokeFonts";
 
 function Button({ size, background, padding, margin, disabled, text, onClick }) {
   const sizes = ["xSmall", "small", "medium", "large"];
@@ -12,7 +11,7 @@ function Button({ size, background, padding, margin, disabled, text, onClick }) 
       onClick={onClick}
       disabled={disabled}
       type="button">
-      <StrokeFonts text={text} />
+      <span className="stroke">{text}</span>
     </button>
   )
 }

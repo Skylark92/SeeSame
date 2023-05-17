@@ -1,5 +1,6 @@
 .stats-bar-wrapper {
   width: 100%;
+  min-height: 1.6rem;
 
   display: flex;
   text-align: initial;
@@ -8,16 +9,16 @@
 .stats-bar-choice-a, .stats-bar-choice-b {
   width: 100%;
 
-  text-indent: 5px;
+  text-indent: 3px;
 }
 
 .stats-bar-choice-a {  
-  flex: var(--choice-a-ratio) 1 15%;
+  flex: var(--choice-a-ratio) 1 20%;
   background: var(--color-choice-a);
 }
 
 .stats-bar-choice-b {
-  flex: var(--choice-b-ratio) 1 15%;
+  flex: var(--choice-b-ratio) 1 20%;
   background: var(--color-choice-b);
   direction: rtl;
 }

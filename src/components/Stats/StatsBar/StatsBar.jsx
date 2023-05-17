@@ -1,20 +1,14 @@
 import "./StatsBar.css";
-import StrokeFonts from "../../StrokeFonts/StrokeFonts";
 
 function StatsBar({ choiceA, choiceB }) {
   if (choiceA === undefined || choiceB === undefined) return;
 
   if (choiceA === 0 && choiceB === 0) {
-    choiceA = 50;
-    choiceB = 50;
-
+    // 아직 결과가 없는 경우
     return (
-      <div className="stats-bar-wrapper" style={{ "--choice-a-ratio": choiceA, "--choice-b-ratio": choiceB }}>
+      <div className="stats-bar-wrapper">
         <div className="stats-bar-null">
-          0
-        </div>
-        <div className="stats-bar-null">
-          0
+          <span className="stroke">-</span>
         </div>
       </div>
     )
@@ -22,11 +16,11 @@ function StatsBar({ choiceA, choiceB }) {
 
   return (
     <div className="stats-bar-wrapper" style={{ "--choice-a-ratio": choiceA, "--choice-b-ratio": choiceB }}>
-      <div className="stats-bar-choice-a" data-ratio={choiceA}>
-        <StrokeFonts text={choiceA + "%"} />
+      <div className="stats-bar-choice-a stroke" data-ratio={choiceA}>
+        <span className="stroke">{choiceA + "%"}</span>
       </div>
-      <div className="stats-bar-choice-b" data-ratio={choiceB}>
-        <StrokeFonts text={choiceB + "%"} />
+      <div className="stats-bar-choice-b stroke" data-ratio={choiceB}>
+        <span className="stroke">{choiceB + "%"}</span>
       </div>
     </div>
   )
