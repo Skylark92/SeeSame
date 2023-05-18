@@ -1,0 +1,44 @@
+.result-gender-wrapper {
+  display: flex;
+}
+
+.result-man-wrapper, .result-woman-wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-gender-title-wrapper {
+  min-width: fit-content;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+  
+  padding: 11px 3px;
+  background: #00365f;
+  border: 2px solid #00a8ff;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.result-man-title, .result-woman-title {
+  width: 5rem;
+  height: 2rem;
+
+  border-radius: 15px;
+  padding: 2px;
+  margin-top: -12px;
+}
+
+.result-man-title {
+  background: var(--color-button-c);
+}
+
+.result-woman-title {
+  background: linear-gradient(#fb8ca7, #ee3859);
+}
