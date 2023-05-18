@@ -1,10 +1,9 @@
 import "./Login.css";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { LOGIN } from "../../store/authSlice";
-import login from "../../firebase/login";
-import Button from "../Button/Button";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
+import Button from "../Button/Button";
 
 function Login() {
   const [inputs, setInputs] = useState({
@@ -13,7 +12,8 @@ function Login() {
   })
 
   const auth = useSelector(state => state.auth);
-  const dispatch = useDispatch();
+
+  const { userLogin, error } = useLogin();
   const navigate = useNavigate();
 
   const inputHandler = (event) => {
@@ -26,8 +26,7 @@ function Login() {
   const loginHandler = async (event) => {
     const { id, password } = inputs;
 
-    const response = await login(id, password);
-    dispatch(LOGIN(response.user));
+    const response = await userLogin(id, password);
     console.log(response);
     if (!response.user.profile) navigate("/editprofile", { replace: true });
     else navigate("/survey");
@@ -37,8 +36,11 @@ function Login() {
 
   else return (
     <form className="login-wrapper" onChange={inputHandler}>
+      <div className="login-background"></div>
+      <p className="login-notice stroke">로그인 하시거나 회원 가입하시면<br />다른 재미있는 논쟁에 대한<br />답도 보실 수 있습니다.</p>
       <input type="text" name="id" placeholder="아이디" />
       <input type="password" name="password" placeholder="비밀번호" />
+      <p className="login-error-message">{error}</p>
       <Button size="small"
         background="var(--color-button-a)"
         margin="1.5rem 0"

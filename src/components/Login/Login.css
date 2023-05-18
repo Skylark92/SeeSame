@@ -1,9 +1,49 @@
 .login-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
+  width: 100%;
+  padding: 35px;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .login-wrapper > form > button {
   line-height: 38px;
+}
+
+.login-notice {
+  font-size: 2.2rem;
+  line-height: 3.4rem;
+  margin-bottom: 2.6rem;
+}
+
+.login-error-message {
+  height: 2.6rem;
+  color: red;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  padding-top: 8px;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(38, 143, 223, 0.8);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.login-wrapper > * {
+  z-index: 30;
 }
