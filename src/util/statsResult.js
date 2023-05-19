@@ -38,9 +38,19 @@ function statsResult(stats) {
     result.woman["10대A"] = percent(stats.choiceA.여자["10대"], stats.choiceA.여자["10대"] + stats.choiceB.여자["10대"]);
     result.woman["10대B"] = percent(stats.choiceB.여자["10대"], stats.choiceA.여자["10대"] + stats.choiceB.여자["10대"]);
 
-    console.log("result :", result);
-    console.log("array :", Object.entries(stats.choiceA.MBTI));
-    console.log("array :", Object.entries(stats.choiceB.MBTI));
+    //
+    const temp = new Map();
+    const keys = Object.keys(stats.choiceA.MBTI);
+
+    for (const key of keys) {
+      temp.set(key, stats.choiceA.MBTI[key] + stats.choiceB.MBTI[key]);
+    }
+
+    const tempArr = [...temp].sort((a, b) => b[1] - a[1]).slice(0, 3);
+    for (const data of tempArr) {
+      result.MBTI.push({ MBTI: data[0], choiceA: percent(stats.choiceA.MBTI[data[0]], data[1]), choiceB: percent(stats.choiceB.MBTI[data[0]], data[1]) });
+    }
+
     return result;
 
   } catch (err) {
