@@ -19,13 +19,13 @@ const authSlice = createSlice({
       state.isLogin = false;
       state.user = null;
     },
-    UPDATE(state, action) {
-      state.user = {
+    PFUPDATE(state, action) {
+      state.user.profile = {
         ...action.payload
       }
     }
   }
 });
 
-export const { LOGIN, LOGOUT } = authSlice.actions;
+export const { LOGIN, LOGOUT, PFUPDATE } = authSlice.actions;
 export default authSlice.reducer;
