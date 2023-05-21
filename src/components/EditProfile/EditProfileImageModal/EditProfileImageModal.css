@@ -28,6 +28,8 @@ input[type="radio"] {
 .edit-profile-image-selector-label {
   display: inline-block;
   background-image: url("../../../assets/images/css_sprites.png");
-  width: 214px;
-  height: 204px;
+  
+  background-size: 351px 336px;
+  width: 107px;
+  height: 102px;
 }

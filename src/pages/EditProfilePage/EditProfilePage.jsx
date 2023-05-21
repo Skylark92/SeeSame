@@ -1,11 +1,11 @@
 import "./EditProfilePage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Button from "../../components/Button/Button";
 import EditProfileField from "../../components/EditProfile/EditProfileField/EditProfileField";
 import EditProfileRadioInput from "../../components/EditProfile/EditProfileRadioInput/EditProfileRadioInput";
-import Button from "../../components/Button/Button";
-import setProfile from "../../firebase/setProfile";
 import EditProfileImageModal from "../../components/EditProfile/EditProfileImageModal/EditProfileImageModal";
+import useUpdateProfile from "../../hooks/useUpdateProfile";
 
 function EditProfilePage() {
   /* 프로필 수정 페이지, 회원가입 시와 프로필 변경 시 이용 */
@@ -21,10 +21,14 @@ function EditProfilePage() {
     JP: null
   }) // 입력값
   const [isModalOpen, setIsModalOpen] = useState(false); // 이미지 선택 모달 렌더링 상태
-  const [isPending, setIsPending] = useState(true); // 통신 상태
+  const [isValid, setIsValid] = useState(false); // 유효성 상태
   const user = useSelector(state => state.auth.user); // 유저 상태
-  console.log("user", user);
-  console.log(inputs);
+  const { updateProfile, isPending } = useUpdateProfile();
+
+  useEffect(() => {
+    if (Object.values(inputs).includes(null)) setIsValid(false);
+    else setIsValid(true);
+  }, [inputs])
 
   /* 이벤트 핸들러 */
   const inputHandler = (event) => {
@@ -32,9 +36,6 @@ function EditProfilePage() {
       ...inputs,
       [event.target.name]: event.target.value
     })
-
-    if (Object.values(inputs).includes(null)) setIsPending(true);
-    else setIsPending(false);
   } // 입력값 상태 관리
 
   const submitHandler = async (event) => {
@@ -46,10 +47,7 @@ function EditProfilePage() {
       MBTI: Object.values(MBTI).join("")
     }
 
-    setIsPending(true); // 통신 시작
-    const res = await setProfile(user?.uid, profileData);
-    console.log(res);
-    setIsPending(false);
+    updateProfile(user?.uid, profileData);
   } // 프로필 데이터 제출
 
   const modalHandler = (event) => {
@@ -59,9 +57,9 @@ function EditProfilePage() {
   return (
     <form className="edit-profile-wrapper" onChange={inputHandler}>
       <div className="edit-profile-image-view" style={{ backgroundPosition: `var(--${inputs.profileImage})` }} onClick={modalHandler}>
-        {<EditProfileImageModal isModalOpen={isModalOpen} />}
+        {<EditProfileImageModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
       </div>
-      <p>{"닉네임"}</p>
+      {/* <p>{닉네임 설정}</p> */}
       <EditProfileField title="성별">
         {["남자", "여자"].map((item) => <EditProfileRadioInput id={item} name="성별" />)}
       </EditProfileField>
@@ -82,7 +80,7 @@ function EditProfilePage() {
           {["J", "P"].map((item) => <EditProfileRadioInput id={item} name="JP" />)}
         </div>
       </EditProfileField>
-      <Button size="medium" background="hotpink" text="확인" disabled={isPending} onClick={submitHandler} />
+      <Button size="medium" background={"linear-gradient(#fb8ca7, #ee3859)"} text="확인" disabled={!isValid || isPending} onClick={submitHandler} />
     </form>
   )
 }

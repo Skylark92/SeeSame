@@ -1,19 +1,24 @@
 .edit-profile-wrapper {
-  box-sizing: border-box;
-  text-align: center;
-  padding: 5rem 3rem;
+  width: 100%;
+  font-size: 1.6rem;
+  color: black;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4rem;
-
-  border: 1px solid black;
 }
 
 .edit-profile-image-view {
-  width: 214px;
-  height: 204px;
+  width: 107px;
+  height: 102px;
   background: url("../../assets/images/css_sprites.png");
+  background-size: 351px 336px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+}
+
+.edit-profile-option-wrapper > .edit-profile-input-wrapper:nth-child(2) > label {
+  margin-top: 5px;
 }

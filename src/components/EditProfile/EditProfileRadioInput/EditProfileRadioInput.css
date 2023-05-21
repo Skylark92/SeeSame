@@ -7,13 +7,13 @@ input[type="radio"] {
   display: block;
   width: 100%;
   
-  background: gray;
+  background: white;
   padding: 1rem;
   font-size: 2rem;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 input:checked + .edit-profile-radio-input-label {
-  background: hotpink;
+  background: linear-gradient(#fb8ca7, #ee3859);
 }
