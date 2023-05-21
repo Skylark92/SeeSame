@@ -16,10 +16,10 @@ function StatsBar({ choiceA, choiceB }) {
 
   return (
     <div className="stats-bar-wrapper" style={{ "--choice-a-ratio": choiceA, "--choice-b-ratio": choiceB }}>
-      <div className="stats-bar-choice-a stroke" data-ratio={choiceA}>
+      <div className="stats-bar-choice-a" data-ratio={choiceA}>
         <span className="stroke">{choiceA + "%"}</span>
       </div>
-      <div className="stats-bar-choice-b stroke" data-ratio={choiceB}>
+      <div className="stats-bar-choice-b" data-ratio={choiceB}>
         <span className="stroke">{choiceB + "%"}</span>
       </div>
     </div>

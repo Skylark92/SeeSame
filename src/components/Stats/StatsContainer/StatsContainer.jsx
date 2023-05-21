@@ -1,5 +1,5 @@
-import StatsBar from "../StatsBar/StatsBar";
 import "./StatsContainer.css";
+import StatsBar from "../StatsBar/StatsBar";
 
 function StatsContainer() {
   return (

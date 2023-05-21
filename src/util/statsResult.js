@@ -1,7 +1,7 @@
 import percent from "./percent";
 
 function statsResult(stats) {
-  console.log(stats);
+  // console.log(stats);
   const result = {
     total: {},
     man: {},

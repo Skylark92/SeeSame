@@ -9,7 +9,7 @@
 .stats-bar-choice-a, .stats-bar-choice-b {
   width: 100%;
 
-  text-indent: 3px;
+  text-indent: 0.3rem;
 }
 
 .stats-bar-choice-a {  
