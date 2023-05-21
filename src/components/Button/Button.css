@@ -4,8 +4,8 @@
   font-size: 2.4rem;
   text-align: center;
   color: white;
-  outline: 3px solid rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+  outline: 0.3rem solid rgba(0, 0, 0, 0.5);
+  border-radius: 1.5rem;
 
   cursor: pointer;
 }
@@ -18,21 +18,25 @@
 
 .common-button.xSmall {
   font-size: 1.8rem;
-  width: 216px;
-  height: 36px
+  width: 21.6rem;
+  height: 3.6rem;
 }
 
 .common-button.small {
-  width: 216px;
-  height: 46px;
+  width: 21.6rem;
+  height: 4.6rem;
 }
 
 .common-button.medium {
-  width: 220px;
-  height: 56px;
+  width: 22rem;
+  height: 5.6rem;
 }
 
 .common-button.large {
-  width: 304px;
-  height: 56px;
+  width: 30.4rem;
+  height: 5.6rem;
+}
+
+button > span {
+  pointer-events: none;
 }
