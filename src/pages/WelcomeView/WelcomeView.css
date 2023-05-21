@@ -1,17 +1,13 @@
-.welcome-view-wrapper {
-  text-align: center;
-}
-
 .welcome-view-title {
   font-size: 5.4rem;
-  padding: 3rem 0 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 .welcome-view-sesame-logo {
   aspect-ratio: 1 / 1;
 
-  width: 276px;
-  margin: 3.2rem 0 4rem;
+  width: 27.6rem;
+  margin: 4.4rem 0 4rem;
 }
 
 .welcome-view-greetings {
@@ -19,4 +15,8 @@
   line-height: 3.5rem;
   padding: 1.4rem 0 2.2rem;
   margin-bottom: 2rem;
+}
+
+.welcome-view-wrapper button {
+  margin-top: 1.8rem;
 }

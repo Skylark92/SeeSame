@@ -26,8 +26,6 @@ function WelcomeView() {
       <p className="welcome-view-greetings">당신과 동일한 성향의 사람은<br />얼마나 있을까요?</p>
       <Button size="medium"
         background="var(--color-button-a)"
-        padding="1rem 3rem"
-        margin="1.6rem 0"
         text="시작하기"
         onClick={movePageHandler} />
     </div>
