@@ -1,0 +1,17 @@
+.result-MBTI-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.result-MBTI-several {
+  width: 100%;
+  display: flex;
+}
+
+.result-MBTI-several > span {
+  width: 15%;
+}
