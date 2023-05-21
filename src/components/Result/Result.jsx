@@ -1,19 +1,17 @@
 import "./Result.css";
 import { useSelector } from "react-redux";
-import StatsBar from "../Stats/StatsBar/StatsBar";
-import Login from "../../components/Login/Login";
-import ResultBackground from "./ResultDetail/ResultBackground/ResultBackground";
-import Header from "../Header/Header";
 import basicLogo from "../../assets/images/sesame_logo.png";
-import statsResult from "../../util/statsResult";
+import Login from "../Login/Login";
+import Header from "../Header/Header";
+import StatsBar from "../Stats/StatsBar/StatsBar";
+import ResultBackground from "./ResultDetail/ResultBackground/ResultBackground";
 import ResultGender from "./ResultDetail/ResultGender/ResultGender";
 import ResultMBTI from "./ResultDetail/ResultMBTI/ResultMBTI";
+import statsResult from "../../util/statsResult";
 
 function Result({ survey, setResult }) {
   const user = useSelector(state => state.auth.user);
-  // 결과 즉각 반영 안 되는 문제 해결해야 함
 
-  if (!(survey && setResult)) return;
   const stats = survey.stats;
 
   const result = statsResult(stats);
@@ -22,10 +20,15 @@ function Result({ survey, setResult }) {
     setResult(false);
   }
 
+  if (!(survey && setResult && result)) return; // 데이터가 들어오지 않으면 빈 화면
+
   return (
     <div className="survey-result-container">
       <div className="survey-result-wrapper">
-        <Header text={survey.title} backButton={true} onClick={closeModal} />
+        <button className="survey-result-close-button" onClick={closeModal} type="button">
+          <span className="stroke">ｘ</span>
+        </button>
+        <Header text={survey.title} />
         <div className="survey-result-content-wrapper">
           <img src={basicLogo} />
           <p>{survey.content}</p>
