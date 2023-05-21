@@ -1,0 +1,12 @@
+.sign-up-input-label {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  
+  color: #77c4ff;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  text-align: left;
+
+  margin-bottom: 0.2rem;
+}
