@@ -10,9 +10,7 @@
   cursor: pointer;
 }
 
-.common-button:disabled {
-  background: var(--color-null);
-  
+.common-button:disabled {  
   cursor: default;
 }
 

@@ -8,7 +8,7 @@ function Button({ size, name, background, disabled, text, onClick }) {
   return (
     <button className={"common-button " + size}
       name={name}
-      style={{ background }}
+      style={{ background: disabled ? "var(--color-null)" : background }}
       onClick={onClick}
       disabled={disabled}
       type="button">
