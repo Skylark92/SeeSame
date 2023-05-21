@@ -13,7 +13,7 @@ function Login() {
 
   const auth = useSelector(state => state.auth);
 
-  const { userLogin, error } = useLogin();
+  const { userLogin, isPending, error } = useLogin();
   const navigate = useNavigate();
 
   const inputHandler = (event) => {
@@ -26,10 +26,7 @@ function Login() {
   const loginHandler = async (event) => {
     const { id, password } = inputs;
 
-    const response = await userLogin(id, password);
-    console.log(response);
-    if (!response.user.profile) navigate("/editprofile", { replace: true });
-    else navigate("/survey");
+    await userLogin(id, password);
   }
 
   if (auth.isLogin || auth.user) return;
@@ -43,8 +40,8 @@ function Login() {
       <p className="login-error-message">{error}</p>
       <Button size="small"
         background="var(--color-button-a)"
-        margin="1.5rem 0"
         text="로그인"
+        disabled={isPending}
         onClick={loginHandler} />
       <Button size="xSmall"
         background="var(--color-button-c)"

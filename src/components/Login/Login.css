@@ -6,7 +6,7 @@
   text-align: center;
 
   width: 100%;
-  padding: 35px;
+  padding: 3.5rem;
 
   position: absolute;
   left: 0;
@@ -14,8 +14,9 @@
   bottom: 0;
 }
 
-.login-wrapper > form > button {
-  line-height: 38px;
+.login-wrapper > button {
+  line-height: 3.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .login-notice {
@@ -29,7 +30,7 @@
   color: red;
   font-size: 1.4rem;
   line-height: 1.5rem;
-  padding-top: 8px;
+  padding-top: 0.8rem;
 }
 
 .login-background {
