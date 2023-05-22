@@ -13,8 +13,6 @@
 
 .slide-wrapper > div {
   height: 100%;
-}
-
-.slide-wrapper > * {
-  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
 }
